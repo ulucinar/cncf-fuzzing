@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/bin/bash -eux
 # Copyright 2022 Ada Logics Ltd
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,15 +30,3 @@ go mod tidy
 rm /root/go/pkg/mod/github.com/aws/aws-sdk-go-v2/internal/ini@v1.3.11/fuzz.go
 
 compile_go_fuzzer github.com/crossplane/crossplane/apis/apiextensions/v1 FuzzPatchApply fuzz_patch_apply
-compile_go_fuzzer github.com/crossplane/crossplane/apis/apiextensions/v1 FuzzTransform fuzz_transform
-compile_go_fuzzer github.com/crossplane/crossplane/internal/xpkg FuzzParse fuzz_parse
-compile_go_fuzzer github.com/crossplane/crossplane/internal/controller/apiextensions/claim FuzzPropagateConnection fuzz_propagate_connection
-compile_go_fuzzer github.com/crossplane/crossplane/internal/controller/apiextensions/composition FuzzNewCompositionRevision fuzz_NewCompositionRevision
-compile_go_fuzzer github.com/crossplane/crossplane/internal/controller/apiextensions/composite FuzzAsComposition fuzz_AsComposition
-compile_go_fuzzer github.com/crossplane/crossplane/internal/controller/pkg/manager FuzzPackageRevision fuzz_PackageRevision
-compile_go_fuzzer github.com/crossplane/crossplane/internal/controller/pkg/revision FuzzGCRExtract fuzz_gcr_extract
-compile_go_fuzzer github.com/crossplane/crossplane/internal/controller/pkg/revision FuzzParseReference fuzz_parse_reference
-compile_go_fuzzer github.com/crossplane/crossplane/internal/xcrd FuzzForCompositeResource fuzz_ForCompositeResource
-compile_go_fuzzer github.com/crossplane/crossplane/internal/xcrd FuzzForCompositeResourceClaim fuzz_FuzzForCompositeResourceClaim
-compile_go_fuzzer github.com/crossplane/crossplane/internal/xpkg FuzzFindXpkgInDir fuzz_find_xpkg_in_dir
-compile_go_fuzzer github.com/crossplane/crossplane/internal/dag FuzzDag fuzz_dag

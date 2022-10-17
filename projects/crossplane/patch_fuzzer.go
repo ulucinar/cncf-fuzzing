@@ -17,6 +17,7 @@ package v1
 
 import (
 	"errors"
+
 	"github.com/crossplane/crossplane-runtime/pkg/resource/fake"
 	pkgmetav1 "github.com/crossplane/crossplane/apis/pkg/meta/v1"
 	pkgmetav1alpha1 "github.com/crossplane/crossplane/apis/pkg/meta/v1alpha1"
@@ -81,7 +82,7 @@ func FuzzPatchApply(data []byte) int {
 	}
 	addType(p, typeIndex)
 
-	p.Apply(cd, cp)
+	p.Apply(cp, cd)
 
 	return 1
 }
